@@ -1,0 +1,33 @@
+# vim: ft=conf noet
+choice
+	prompt "Choose host preset"
+	default HOST_PRESET_NONE
+	help
+	  Custom host presets that select all required options for a specific host
+	  instance.
+	config HOST_PRESET_NONE
+		bool "none"
+	config HOST_PRESET_HERTZ
+		bool "hertz.flisk.xyz"
+		depends on TARGET_ar71xx_generic_DEVICE_archer-c5-v1
+		select PACKAGE_kmod-wireguard
+		select PACKAGE_libgcrypt
+		select PACKAGE_libgpg-error
+		select PACKAGE_luci
+		select PACKAGE_luci-base
+		select PACKAGE_luci-mod-admin-full
+		select PACKAGE_luci-app-firewall
+		select PACKAGE_luci-app-sqm
+		select PACKAGE_luci-app-wireguard
+		select PACKAGE_luci-proto-wireguard
+		select PACKAGE_wireguard
+		select PACKAGE_wireguard-tools
+		select PACKAGE_collectd
+		select PACKAGE_COLLECTD_ENCRYPTED_NETWORK
+		select PACKAGE_collectd-mod-interface
+		select PACKAGE_collectd-mod-load
+		select PACKAGE_collectd-mod-memory
+		select PACKAGE_collectd-mod-network
+		select PACKAGE_collectd-mod-ping
+		select PACKAGE_collectd-mod-uptime
+endchoice
