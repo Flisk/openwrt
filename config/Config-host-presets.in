@@ -11,8 +11,6 @@ choice
 		bool "hertz.flisk.xyz"
 		depends on TARGET_ar71xx_generic_DEVICE_archer-c5-v1
 		select PACKAGE_kmod-wireguard
-		select PACKAGE_libgcrypt
-		select PACKAGE_libgpg-error
 		select PACKAGE_luci
 		select PACKAGE_luci-base
 		select PACKAGE_luci-mod-admin-full
@@ -23,7 +21,6 @@ choice
 		select PACKAGE_wireguard
 		select PACKAGE_wireguard-tools
 		select PACKAGE_collectd
-		select PACKAGE_COLLECTD_ENCRYPTED_NETWORK
 		select PACKAGE_collectd-mod-interface
 		select PACKAGE_collectd-mod-load
 		select PACKAGE_collectd-mod-memory
